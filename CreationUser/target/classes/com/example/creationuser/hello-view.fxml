@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.creationuser.HelloController"
+      stylesheets="@Style.css">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Text textAlignment="CENTER" styleClass="title">Création d'un utilisateur</Text>
+
+    <GridPane hgap="10" vgap="10">
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0">Nom : </Label>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="choixNom"/>
+        <Text GridPane.columnIndex="2" GridPane.rowIndex="0" fx:id="retroactionNom"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1">Prénom(s) : </Label>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="choixPrenom"/>
+        <Text GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="retroactionPrenom"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2">Titre : </Label>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="choixTitre"/>
+        <Text GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="retroactionTitre"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3">Description : </Label>
+        <TextArea GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="choixdescription"
+                  prefRowCount="4" prefColumnCount="50"/>
+        <Text GridPane.columnIndex="2" GridPane.rowIndex="3" fx:id="retroactionDescription"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="4">Permissions : </Label>
+        <ChoiceBox GridPane.columnIndex="1" GridPane.rowIndex="4" value="choixPermission">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Administrateur"/>
+                    <String fx:value="Utilisateur"/>
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="5">Mot de passe : </Label>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="choixMdp"/>
+        <Text GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="retroactionMdp"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="6">Confirmer mot de passe : </Label>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" fx:id="choixConfirmationMdp"/>
+        <Text GridPane.columnIndex="2" GridPane.rowIndex="6" fx:id="retroactionConfirmationMdp"/>
+
+    </GridPane>
+    <HBox  fx:id="groupetable" spacing="20">
+        <VBox fx:id="table" >
+            <Label text="Dimanche"/>
+            <CheckBox></CheckBox>
+        </VBox>
+        <VBox fx:id="table1">
+            <Label text="Lundi"/>
+            <CheckBox></CheckBox>
+        </VBox>
+        <VBox fx:id="table2">
+            <Label text="Mardi"/>
+            <CheckBox></CheckBox>
+        </VBox>
+        <VBox fx:id="table3">
+            <Label text="Mercredi"/>
+            <CheckBox></CheckBox>
+        </VBox>
+        <VBox styleClass="table4">
+            <Label text="Jeudi"/>
+            <CheckBox></CheckBox>
+        </VBox>
+        <VBox fx:id="table5">
+            <Label text="Vendredi"/>
+            <CheckBox></CheckBox>
+        </VBox>
+        <VBox fx:id="table6">
+            <Label text="Samedi"/>
+            <CheckBox></CheckBox>
+        </VBox>
+    </HBox>
+    <Text fx:id="retroactionGlobale"/>
+
+    <HBox alignment="BOTTOM_RIGHT">
+        <Button onMouseClicked="#onSoumission">Créer mon compte</Button>
+    </HBox>
+
+</VBox>
